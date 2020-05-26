@@ -1,9 +1,10 @@
-    /*----- app state -----*/
+$(document).ready(function() {
+    /*----- app state ---------------------------*/
     let win, lose; //scorekeeping varaibles
     let category = ["fruits"]
     let words = ["apples", "bananas", "kiwi"];
 
-    /*----- cached elements -----*/
+    /*------------ cached elements ---------------*/
 
     const status = $("#status");
     const selectedCategory = $("#selectedcategory");
@@ -12,12 +13,32 @@
     const alphabet = $("li"); //.eq selects the specific one
     const resetButton = $("#reset");
     const hintButton = $("#hint");
+    const soundButton = $("#sound");
     /*-- need to fix--*/
-    const updateNumOfWins = $("#numofWins");
-    const updateNumOfLoses = $("#numofLoses");
+    const updateNumOfWins = $("#numOfWins");
+    const updateNumOfLoses = $("#numOfLoses");
 
-    // /* events */
+    /*----------- events ------------------*/
 
+    alphabet.click(function() {
+        let getIndex = $(this).index();
+        let getLetter = this.closest("li");
+        console.log(getIndex);
+        console.log(getLetter);
+
+    })
+
+    resetButton.click(function() {
+        console.log("reset")
+    })
+
+    hintButton.click(function() {
+        console.log("hint")
+    })
+
+    soundButton.click(function() {
+        console.log("sound")
+    })
 
     // on click erc
     // /*----- function ------*/
@@ -45,11 +66,5 @@
     //     -
     //     hide my letters as I click them -
 
-    $(document).ready(function() {
 
-        const listClick = $("ul")
-
-        listClick.click(function(x) {
-            listClick.addClass("active");
-        })
-    })
+})
