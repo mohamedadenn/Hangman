@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script defer src="./js/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Hangman</h1>
+        <!-- Category  -->
+        <h3>Category:</h3>
+        <h3 id="Category">Fruits</h3>
+    </header>
+
+    <!-- Hangman Canvas -->
+    <canvas></canvas>
+
+    <!-- Underlined Letter Choices. Based on #
+     of letters JS will add new "div" -->
+    <section id="wordwrap">
+        <div> &nbsp; </div>
+        <div> &nbsp;</div>
+        <div> &nbsp;</div>
+        <div> &nbsp;</div>
+        <div>&nbsp; </div>
+        <div> &nbsp;</div>
+        <div>&nbsp;</div>
+
+    </section>
+
+    <!-- Alpahbet -->
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+        <li>f</li>
+        <li>g</li>
+        <li>h</li>
+        <li>i</li>
+        <li>j</li>
+        <li>k</li>
+        <li>l</li>
+        <li>m</li>
+        <li>n</li>
+        <li>o</li>
+        <li>p</li>
+        <li>q</li>
+        <li>r</li>
+        <li>s</li>
+        <li>t</li>
+        <li>u</li>
+        <li>v</li>
+        <li>w</li>
+        <li>x</li>
+        <li>y</li>
+        <li>z</li>
+    </ul>
+
+    <!-- Reset, Sound & Hint Button -->
+    <section id="controls">
+        <button id="reset">Try again</button>
+        <button id="hint">Hint</button>
+        <button id="Sound">Sound </button></section>
+    <!-- Scorekeeper -->
+    <div id="Scoreboard">
+        <div class="won">Won: <span class="numOfWons">0</span></div>
+        <div class="lost">Lost: <span class="numOfLoses">0</span></div>
+    </div>
+</body>
+
+
+</html>

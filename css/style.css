@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    border: 3px solid black;
+}
+
+h3 {
+    display: inline-flex;
+}
+
+li {
+    display: inline-flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0 20px 10px 10px;
+    padding: 10px;
+    background-color: aqua;
+    border: 3px solid black;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: chartreuse;
+}
+
+.active {
+    opacity: 0.5;
+}
+
+canvas {
+    border: 3px dotted purple;
+    height: 18em;
+}
+
+section div {
+    border-bottom: 3px solid black;
+    padding: 20px;
+    margin: 0.5em;
+    display: inline-flex;
+    font-size: 2.5em;
+}
+
+button {
+    display: inline-flex;
+    justify-content: space-evenly;
+}
