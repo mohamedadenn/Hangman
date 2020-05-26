@@ -7,7 +7,7 @@
     <title>Hangman</title>
     <link rel="stylesheet" href="./css/style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script defer src="./js/main.js"></script>
+
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 
 
     <!-- Hangman Canvas -->
-    <canvas></canvas>
+    <canvas id="hangman" width="180" height="250"></canvas>
 
     <!-- Underlined Letter Choices. Based on #
      of letters JS will add new "div" -->
@@ -74,7 +74,7 @@
 
     <div class="won">Won: <span id="numOfWins">0</span></div>
     <div class="lost">Lost: <span id="numOfLoses">0</span></div>
-
+    <script defer src="./js/main.js"></script>
 </body>
 
 </html>

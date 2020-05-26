@@ -30,8 +30,8 @@ li:hover {
 }
 
 canvas {
-    border: 3px dotted purple;
-    height: 18em;
+    /* border: 3px dotted purple;
+    height: 18em; */
 }
 
 section div {
