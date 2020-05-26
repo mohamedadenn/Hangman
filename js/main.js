@@ -1,45 +1,55 @@
-// /*----- app state -----*/
-// let board, winner, turn;
+    /*----- app state -----*/
+    let win, lose; //scorekeeping varaibles
+    let category = ["fruits"]
+    let words = ["apples", "bananas", "kiwi"];
 
-// /*----- cached elements -----*/
-// const msgEl = document.getElementById(ENTER MESSAGE ELEMENT)
-// const markersEl(the trigger) = document.getElementById
+    /*----- cached elements -----*/
 
-// const cellEls
+    const status = $("#status");
+    const selectedCategory = $("#selectedcategory");
+    const canvas = $("canvas");
+    const makeUnderline = $("#wordwrap");
+    const alphabet = $("li"); //.eq selects the specific one
+    const resetButton = $("#reset");
+    const hintButton = $("#hint");
+    /*-- need to fix--*/
+    const updateNumOfWins = $("#numofWins");
+    const updateNumOfLoses = $("#numofLoses");
 
-// /* events */
-
-// on click erc
-// /*----- function ------*/
-// init() - getting the game going
-
-// function render() {
-//     //if letter used then grey out button - .style.color = .includes ? grey : blue
-
-// }
-
-
-// function init() {
-
-//     resets game
+    // /* events */
 
 
-//     array.forEach() => { //looping through array
-//     });
-// winner = null
+    // on click erc
+    // /*----- function ------*/
+    // init() - getting the game going
 
-// render()
-// }
+    // function render() {
+    //     //if letter used then grey out button - .style.color = .includes ? grey : blue
 
-// render
-//     -
-//     hide my letters as I click them -
+    // }
 
-$(document).ready(function() {
 
-    const listClick = $("ul")
+    // function init() {
 
-    listClick.click(function(x) {
-        listClick.addClass("active");
+    //     resets game
+
+
+    //     array.forEach() => { //looping through array
+    //     });
+    // winner = null
+
+    // render()
+    // }
+
+    // render
+    //     -
+    //     hide my letters as I click them -
+
+    $(document).ready(function() {
+
+        const listClick = $("ul")
+
+        listClick.click(function(x) {
+            listClick.addClass("active");
+        })
     })
-})

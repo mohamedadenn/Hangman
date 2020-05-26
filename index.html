@@ -11,12 +11,13 @@
 </head>
 
 <body>
-    <header>
-        <h1>Hangman</h1>
-        <!-- Category  -->
-        <h3>Category:</h3>
-        <h3 id="Category">Fruits</h3>
-    </header>
+
+    <h1 id="title">Hangman</h1>
+    <p>You have <span id="status">Test</span></p>
+    <!-- Category  -->
+    <h3>Category:</h3>
+    <h3 id="selectedcategory">Fruits</h3>
+
 
     <!-- Hangman Canvas -->
     <canvas></canvas>
@@ -69,12 +70,11 @@
         <button id="reset">Try again</button>
         <button id="hint">Hint</button>
         <button id="Sound">Sound </button></section>
-    <!-- Scorekeeper -->
-    <div id="Scoreboard">
-        <div class="won">Won: <span class="numOfWons">0</span></div>
-        <div class="lost">Lost: <span class="numOfLoses">0</span></div>
-    </div>
-</body>
+    <!-- Scoreboard -->
 
+    <div class="won">Won: <span id="numOfWins">0</span></div>
+    <div class="lost">Lost: <span id="numOfLoses">0</span></div>
+
+</body>
 
 </html>
