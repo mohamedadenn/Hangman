@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman</title>
     <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
-    <h1 id="title">Hangman</h1>
-    <p>You have <span id="status">WON</span></p>
+    <h1 id="title">Hangman<i style="font-size:40px" class="fa" id="helpIcon">&#xf059;</i></h1>
+    <!-- Help Icon, which gives instructions on how to play-->
+
+
     <!-- Category  -->
     <h3>Category: <span id="selectedcategory"> Fruits</span></h3>
 
@@ -23,16 +26,11 @@
     <!-- Underlined Letter Choices. Based on #
      of letters JS will add new "div" -->
     <section id="wordwrap">
-        <div> &nbsp; </div>
-        <div> &nbsp;</div>
-        <div> &nbsp;</div>
-        <div> &nbsp;</div>
-        <div>&nbsp; </div>
-        <div> &nbsp;</div>
-        <div>&nbsp;</div>
 
     </section>
 
+    <!-- Messages - Default(as seen below), Win or Lose -->
+    <p id="status">Use the alphabet below to guess the word in the listed category! </p>
     <!-- Alpahbet -->
     <ul>
         <li>a</li>
@@ -69,9 +67,10 @@
         <button id="hint">Hint</button>
         <button id="sound">Sound </button></section>
     <!-- Scoreboard -->
-
-    <div class="won">Won: <span id="numOfWins">0</span></div>
-    <div class="lost">Lost: <span id="numOfLoses">0</span></div>
+    <div id="scoreboard">
+        <div class="won">Won: <span id="numOfWins">0</span></div>
+        <div class="lost">Lost: <span id="numOfLoses">0</span></div>
+    </div>
     <script defer src="./js/main.js"></script>
 </body>
 

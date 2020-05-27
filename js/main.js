@@ -3,7 +3,7 @@ $(document).ready(function() {
     let win = 0;
     let lose = 0;
     let category = ["fruits", "animals", "countries"];
-    let fruits = ["apples", "bananas", "kiwi"];
+    let word = ["apples", "bananas", "kiwi"];
     let animals = ["dogs", "cats", "monkeys"];
     let countries = ["Canada", "France", "China"];
     let hint = ["its red", "its yellow", "its green"];
@@ -19,6 +19,7 @@ $(document).ready(function() {
         'leftFoot',
     ]
     var step = 0;
+    var lives = 9;
 
     /*------------ cached elements ---------------*/
 
@@ -35,15 +36,9 @@ $(document).ready(function() {
     const updateNumOfWins = document.getElementById("#numOfWins")
     const updateNumOfLoses = document.getElementById("#numOfLoses")
 
+
     /*----------- events ------------------*/
 
-    alphabet.click(function() {
-        let getIndex = $(this).index();
-        let getLetter = this.closest("li");
-        console.log(getIndex);
-        console.log(getLetter);
-
-    })
 
     resetButton.click(function() {
         Draw(draws[step++])
@@ -141,6 +136,37 @@ $(document).ready(function() {
     }
 
     function startGame() {
-        Math.floor(math.random)
+        chosenCategory = category[Math.floor(Math.random() * category.length)];
+        categoryWord = word[Math.floor(Math.random() * word.length)];
+
+        word = categoryWord.replace(/./g, "-");
+        console.log(word);
+
+        makeUnderline.append('<div>' + word + '</div>')
+        selectedCategory.text(chosenCategory)
+
+    };
+
+    function checkGuess(guess) {
+
+        for (let i = 0; i < categoryWord.length; i++) {
+            if (categoryWord[i] == guess) {
+                word = setCharAt(word, i, guess);
+            }
+        }
+
     }
-})
+
+
+    alphabet.click(function() {
+        let selectedLetter = this.closest("li");
+        console.log(selectedLetter);
+
+        if (selectedLetter.indexOf(categoryWord)) {
+            console.log("test")
+        } else {
+            console.log("no")
+        }
+    })
+    startGame()
+});
