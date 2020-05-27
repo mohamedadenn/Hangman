@@ -1,9 +1,12 @@
 $(document).ready(function() {
     /*----- app state ---------------------------*/
-    let win, lose; //scorekeeping varaibles
-    let category = ["fruits"]
-    let words = ["apples", "bananas", "kiwi"];
-    let hint = [""];
+    let win = 0;
+    let lose = 0;
+    let category = ["fruits", "animals", "countries"];
+    let fruits = ["apples", "bananas", "kiwi"];
+    let animals = ["dogs", "cats", "monkeys"];
+    let countries = ["Canada", "France", "China"];
+    let hint = ["its red", "its yellow", "its green"];
     const draws = [
         'gallows',
         'head',
@@ -29,8 +32,8 @@ $(document).ready(function() {
     const hintButton = $("#hint");
     const soundButton = $("#sound");
     /*-- need to fix--*/
-    const updateNumOfWins = $("#numOfWins");
-    const updateNumOfLoses = $("#numOfLoses");
+    const updateNumOfWins = document.getElementById("#numOfWins")
+    const updateNumOfLoses = document.getElementById("#numOfLoses")
 
     /*----------- events ------------------*/
 
@@ -132,34 +135,12 @@ $(document).ready(function() {
     }
 
     /*----- function ------*/
+
     clearCanvas = () => {
         context.clearRect(0, 0, canvas.width, canvas.height)
     }
 
-    // init() //initalizes all state variables
-
-    // function render() {
-    //     //     //if letter used then grey out button - .style.color = .includes ? grey : blue
-    //     if
-
-    // }
-
-
-    // function init() {
-
-    //     resets game
-
-
-    //     array.forEach() => { //looping through array
-    //     });
-    // winner = null
-
-    // render()
-    // }
-
-    // render
-    //     -
-    //     hide my letters as I click them -
-
-
+    function startGame() {
+        Math.floor(math.random)
+    }
 })
