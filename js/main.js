@@ -33,17 +33,84 @@ $(document).ready(function() {
     const resetButton = $("#reset");
     const hintButton = $("#hint");
     const soundButton = $("#sound");
-    const updateNumOfWins = $("numOfWins")
-    const updateNumOfLoses = $("numOfLoses")
-    const livesLeft = $("livesleft")
-
+    const updateNumOfWins = $("numOfWins");
+    const updateNumOfLoses = $("numOfLoses");
+    const livesLeft = $("livesleft");
+    let domUnderscore = document.getElementsByClassName("domunderscore");
     /*----------- events ------------------*/
-    alphabet.click(function() {
-        let a = document.getElementById("a");
+
+    let a = document.getElementById("a");
+    a.addEventListener("click", function() {
         checkGuess("a");
+        a.classList.add("inactive");
 
+    });
 
-    })
+    let b = document.getElementById("b");
+    b.addEventListener("click", function() { checkGuess("b"); });
+
+    let c = document.getElementById("c");
+    c.addEventListener("click", function() { checkGuess("c"); });
+
+    let d = document.getElementById("d");
+    d.addEventListener("click", function() { checkGuess("d"); });
+
+    let e = document.getElementById("e");
+    e.addEventListener("click", function() { checkGuess("e"); });
+
+    let f = document.getElementById("f");
+    f.addEventListener("click", function() { checkGuess("f"); });
+
+    // let b = document.getElementById("b").closest("li");
+    // checkGuess("b");
+    // let c = document.getElementById("c").closest("li");
+    // checkGuess("c");
+    // let d = document.getElementById("d").closest("li");
+    // checkGuess("d");
+    // let e = document.getElementById("e").closest("li");
+    // checkGuess("e");
+    // let f = document.getElementById("f").closest("li");
+    // checkGuess("f");
+    // let g = document.getElementById("g").closest("li");
+    // checkGuess("g");
+    // let h = document.getElementById("h").closest("li");
+    // checkGuess("h");
+    // let i = document.getElementById("i").closest("li");
+    // checkGuess("i");
+    // let j = document.getElementById("j").closest("li");
+    // checkGuess("j");
+    // let k = document.getElementById("k").closest("li");
+    // checkGuess("k");
+    // let l = document.getElementById("l").closest("li");
+    // checkGuess("l");
+    // let m = document.getElementById("m").closest("li");
+    // checkGuess("m");
+    // let n = document.getElementById("n").closest("li");
+    // checkGuess("n");
+    // let o = document.getElementById("o").closest("li");
+    // checkGuess("o");
+    // let p = document.getElementById("p").closest("li");
+    // checkGuess("p");
+    // let q = document.getElementById("q").closest("li");
+    // checkGuess("q");
+    // let r = document.getElementById("r").closest("li");
+    // checkGuess("r");
+    // let s = document.getElementById("s").closest("li");
+    // checkGuess("s");
+    // let t = document.getElementById("t").closest("li");
+    // checkGuess("t");
+    // let u = document.getElementById("u").closest("li");
+    // checkGuess("u");
+    // let v = document.getElementById("v").closest("li");
+    // checkGuess("v");
+    // let w = document.getElementById("w").closest("li");
+    // checkGuess("w");
+    // let x = document.getElementById("x").closest("li");
+    // checkGuess("x");
+    // let y = document.getElementById("y").closest("li");
+    // checkGuess("y");
+    // let z = document.getElementById("z").closest("li");
+    // checkGuess("z");
 
     document.addEventListener('keypress', (event) => {
         let keyword = event.keyCode;
@@ -158,13 +225,10 @@ $(document).ready(function() {
         categoryWord = word[Math.floor(Math.random() * word.length)];
         hiddenWord = categoryWord.replace(/./g, "-");
         console.log(hiddenWord);
-        console.log(generateUnderscore(hiddenWord.length));
-        makeUnderline.append("<div>" + generateUnderscore(hiddenWord).join(' ') + "</div>")
-
-
-        let domUnderscore = document.getElementById("und");
-        //domUnderscore[0].innerHtml = underscore.join('');
-        selectedCategory.text(chosenCategory)
+        generateUnderscore(hiddenWord.length);
+        makeUnderline.append("<div class='domunderscore'>" + generateUnderscore(hiddenWord).join(' ') + "</div>")
+        selectedCategory.text(chosenCategory);
+        domUnderscore.innerHTML = underscore.join(' ');
 
         clearCanvas()
         step = 0;
@@ -175,35 +239,57 @@ $(document).ready(function() {
 
     function checkGuess(guess) {
         if (categoryWord.indexOf(guess) > -1) {
-            console.log("yes");
-            let domUnd = document.getElementById("und");
-            domUnd.innerHTML = underscore.join('');
+            underscore[categoryWord.indexOf(guess)] = guess;
+            console.log(underscore);
             if (categoryWord.lastIndexOf(guess) > categoryWord.indexOf(guess)) {
-                let x = categoryWord.lastIndexOf(guess);
-
+                let multipleCharacter = categoryWord.lastIndexOf(guess);
+                let counter = 0;
+                while (counter <= multipleCharacter) {
+                    if (categoryWord[counter] == guess) {
+                        underscore[counter] = guess;
+                    }
+                    counter++;
+                }
+                underscore[categoryWord.lastIndexOf(guess)] = guess;
+                console.log(underscore);
             }
 
             console.log(categoryWord.indexOf(guess));
         } else {
-            console.log("no");
             Draw(draws[step++])
             if (undefined === draws[step]);
-            lives--
-            checkWinner();
-            console.log(lives)
-            livesLeft.text(lives)
 
         }
-    }
+        if (checkWinner()) {
+            console.log("win");
+        } else {
+            lives--;
 
-    function checkWinner() {
-        if (lives === 0) {
-            //disable all alphabet buttons
-            loss++
-            console.log(loss)
-            status.text("sorry you have lost")
-            updateNumOfLoses.text(loss);
+        }
+
+        console.log(lives);
+        livesLeft.text(lives);
+
+    }
+}
+
+function checkWinner() {
+    let emptyUnderscore = true;
+    for (let i = 0; i < underscore.length; i++) {
+        if (underscore[i] == "_") {
+            emptyUnderscore = false;
         }
     }
-    startGame()
+    if (lives === 0 && emptyUnderscore == true) {
+        lose++
+        console.log(lose);
+        updateNumOfLoses.text(lose);
+        status.text("sorry you have lost");
+        return false;
+
+    } else {
+        return true;
+    }
+}
+startGame()
 });

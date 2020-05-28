@@ -149,8 +149,9 @@ li:hover {
     background-color: chartreuse;
 }
 
-.active {
+.inactive {
     opacity: 0.5;
+    pointer-events: none;
 }
 
 section div {
@@ -158,10 +159,6 @@ section div {
     margin: 0.5em;
     /* display: inline-flex; */
     font-size: 5em;
-}
-
-#und {
-    content: "";
 }
 
 
