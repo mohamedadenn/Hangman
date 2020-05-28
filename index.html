@@ -7,7 +7,7 @@
     <title>Hangman</title>
     <link rel="stylesheet" href="./css/style.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="./js/main.js" defer></script>
+    <script defer src="./js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 </head>
@@ -22,7 +22,9 @@
     <h3>Category: <span id="selectedcategory"> Fruits</span></h3>
 
     <!-- Hangman Canvas -->
-    <canvas id="hangman" width="180" height="250"></canvas>
+    <div id="hangmanwrapper">
+        <canvas id="hangman" width="180" height="250"></canvas>
+    </div>
 
     <!-- Underlined Letter Choices-->
     <section id="wordwrap">
@@ -65,7 +67,10 @@
     <section id="controls">
         <button id="reset">Try again</button>
         <button id="hint">Hint</button>
-        <button id="sound">Sound </button></section>
+        <audio id="sounds">
+           <source src=""
+       </audio>
+        <a id="sound">Sound </a></section>
     <!-- Scoreboard -->
     <div id="scoreboard">
         <div>Won: <span id="numOfWins">0</span></div>

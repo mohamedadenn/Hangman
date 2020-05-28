@@ -24,16 +24,19 @@ h1 {
     border: 2px solid #f76707;
     border-radius: 5px;
     background-color: #fff4e6;
+    position: relative;
+    margin: 0;
+    padding: 10px;
 }
 
 i {
     grid-area: helpicon;
     grid-row: 1/2;
     grid-column: 4/5;
-    border: 2px solid #f76707;
-    border-radius: 5px;
     background-color: #fff4e6;
     align-content: right;
+    position: absolute;
+    right: 0;
 }
 
 h3 {
@@ -49,13 +52,16 @@ h3 {
     background-color: #fff4e6;
 }
 
-#hangman {
+#hangmanwrapper {
     grid-area: canvas;
     grid-row: 3/4;
     grid-column: auto / span 4;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#hangman {
     border: 2px solid #f76707;
     border-radius: 5px;
     background-color: #fff4e6;
