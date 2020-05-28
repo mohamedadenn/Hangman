@@ -23,8 +23,10 @@
     <!-- Hangman Canvas -->
     <canvas id="hangman" width="180" height="250"></canvas>
 
-    <!-- Underlined Letter Choices. Based on #
-     of letters JS will add new "div" -->
+    <!-- Lives-->
+
+
+    <!-- Underlined Letter Choices-->
     <section id="wordwrap">
 
     </section>
@@ -33,32 +35,32 @@
     <p id="status">Use the alphabet below to guess the word in the listed category! </p>
     <!-- Alpahbet -->
     <ul>
-        <li>a</li>
-        <li>b</li>
-        <li>c</li>
-        <li>d</li>
-        <li>e</li>
-        <li>f</li>
-        <li>g</li>
-        <li>h</li>
-        <li>i</li>
-        <li>j</li>
-        <li>k</li>
-        <li>l</li>
-        <li>m</li>
-        <li>n</li>
-        <li>o</li>
-        <li>p</li>
-        <li>q</li>
-        <li>r</li>
-        <li>s</li>
-        <li>t</li>
-        <li>u</li>
-        <li>v</li>
-        <li>w</li>
-        <li>x</li>
-        <li>y</li>
-        <li>z</li>
+        <li id="a">a</li>
+        <li id="b">b</li>
+        <li id="c">c</li>
+        <li id="d">d</li>
+        <li id="e">e</li>
+        <li id="f">f</li>
+        <li id="g">g</li>
+        <li id="h">h</li>
+        <li id="i">i</li>
+        <li id="j">j</li>
+        <li id="k">k</li>
+        <li id="l">l</li>
+        <li id="m">m</li>
+        <li id="n">n</li>
+        <li id="o">o</li>
+        <li id="p">p</li>
+        <li id="q">q</li>
+        <li id="r">r</li>
+        <li id="s">s</li>
+        <li id="t">t</li>
+        <li id="u">u</li>
+        <li id="v">v</li>
+        <li id="w">w</li>
+        <li id="w">x</li>
+        <li id="y">y</li>
+        <li id="z">z</li>
     </ul>
 
     <!-- Reset, Sound & Hint Button -->
@@ -70,6 +72,7 @@
     <div id="scoreboard">
         <div class="won">Won: <span id="numOfWins">0</span></div>
         <div class="lost">Lost: <span id="numOfLoses">0</span></div>
+        <p id="livesleft">You have 9 lives left</p>
     </div>
     <script defer src="./js/main.js"></script>
 </body>

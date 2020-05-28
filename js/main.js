@@ -4,9 +4,9 @@ $(document).ready(function() {
     let lose = 0;
     let category = ["fruits", "animals", "countries"];
     let word = ["apples", "bananas", "kiwi"];
-    let animals = ["dogs", "cats", "monkeys"];
-    let countries = ["Canada", "France", "China"];
-    let hint = ["its red", "its yellow", "its green"];
+    let word2 = ["cow", "cat", "dog"];
+    let word3 = ["canada", "usa", "kenya"];
+    let hint1 = ["its red", "its yellow", "its green"];
     const draws = [
         'gallows',
         'head',
@@ -18,27 +18,36 @@ $(document).ready(function() {
         'rightFoot',
         'leftFoot',
     ]
-    var step = 0;
+    var step = 0; //9 steps 
     var lives = 9;
 
     /*------------ cached elements ---------------*/
 
-    const status = $("#status");
-    const selectedCategory = $("#selectedcategory");
+    const status = $("#status"); //Status message, where you know if you won or loss 
+    const selectedCategory = $("#selectedcategory"); //Selecting category - needs to be a drop down bar
     const canvas = document.getElementById('hangman');
     const context = canvas.getContext("2d");
-    const makeUnderline = $("#wordwrap");
-    const alphabet = $("li"); //.eq selects the specific one
+    const makeUnderline = $("#wordwrap"); // where the __ ___ __ are stired
+    const alphabet = $("li"); //alphabet
     const resetButton = $("#reset");
     const hintButton = $("#hint");
     const soundButton = $("#sound");
-    /*-- need to fix--*/
-    const updateNumOfWins = document.getElementById("#numOfWins")
-    const updateNumOfLoses = document.getElementById("#numOfLoses")
-
+    const updateNumOfWins = document.getElementById("numOfWins")
+    const updateNumOfLoses = document.getElementById("numOfLoses")
+    const livesLeft = document.getElementById("livesleft")
 
     /*----------- events ------------------*/
+    alphabet.click(function() {
+        let a = document.getElementById("a");
+        checkGuess("a");
 
+
+    })
+
+    document.addEventListener('keypress', (event) => {
+        let keyword = event.keyCode;
+        console.log(keyword);
+    })
 
     resetButton.click(function() {
         Draw(draws[step++])
@@ -131,6 +140,8 @@ $(document).ready(function() {
 
     /*----- function ------*/
 
+
+
     clearCanvas = () => {
         context.clearRect(0, 0, canvas.width, canvas.height)
     }
@@ -138,35 +149,25 @@ $(document).ready(function() {
     function startGame() {
         chosenCategory = category[Math.floor(Math.random() * category.length)];
         categoryWord = word[Math.floor(Math.random() * word.length)];
-
-        word = categoryWord.replace(/./g, "-");
-        console.log(word);
-
-        makeUnderline.append('<div>' + word + '</div>')
+        hiddenWord = categoryWord.replace(/./g, "-");
+        console.log(hiddenWord);
+        makeUnderline.append('<div id="und">' + hiddenWord + '</div>')
         selectedCategory.text(chosenCategory)
-
+        clearCanvas()
     };
 
     function checkGuess(guess) {
-
-        for (let i = 0; i < categoryWord.length; i++) {
-            if (categoryWord[i] == guess) {
-                word = setCharAt(word, i, guess);
-            }
+        if (categoryWord.indexOf(guess) > -1) {
+            console.log("yes");
+            let domUnd = document.getElementById("und");
+            domUnd.innerHtml = "a";
+        } else {
+            console.log("no");
+            let domUnd = document.getElementById("und");
+            domUnd[0].innerHtml = "x";
         }
-
     }
 
 
-    alphabet.click(function() {
-        let selectedLetter = this.closest("li");
-        console.log(selectedLetter);
-
-        if (selectedLetter.indexOf(categoryWord)) {
-            console.log("test")
-        } else {
-            console.log("no")
-        }
-    })
     startGame()
 });
