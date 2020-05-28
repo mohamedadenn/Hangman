@@ -29,7 +29,6 @@ $(document).ready(function() {
     const canvas = document.getElementById('hangman');
     const context = canvas.getContext("2d");
     const makeUnderline = $("#wordwrap"); // where the __ ___ __ are stired
-    const alphabet = $("li"); //alphabet
     const resetButton = $("#reset");
     const hintButton = $("#hint");
     const soundButton = $("#sound");
@@ -47,75 +46,157 @@ $(document).ready(function() {
     });
 
     let b = document.getElementById("b");
-    b.addEventListener("click", function() { checkGuess("b"); });
+    b.addEventListener("click", function() {
+        checkGuess("b");
+        b.classList.add("inactive");
+    });
 
     let c = document.getElementById("c");
-    c.addEventListener("click", function() { checkGuess("c"); });
+    c.addEventListener("click", function() {
+        checkGuess("b");
+        c.classList.add("inactive");
+    });
 
     let d = document.getElementById("d");
-    d.addEventListener("click", function() { checkGuess("d"); });
+    d.addEventListener("click", function() {
+        checkGuess("d");
+        d.classList.add("inactive");
+    });
 
     let e = document.getElementById("e");
-    e.addEventListener("click", function() { checkGuess("e"); });
+    e.addEventListener("click", function() {
+        checkGuess("e");
+        e.classList.add("inactive");
+    });
+
 
     let f = document.getElementById("f");
-    f.addEventListener("click", function() { checkGuess("f"); });
+    f.addEventListener("click", function() {
+        checkGuess("f");
+        f.classList.add("inactive");
+    });
 
-    // let b = document.getElementById("b").closest("li");
-    // checkGuess("b");
-    // let c = document.getElementById("c").closest("li");
-    // checkGuess("c");
-    // let d = document.getElementById("d").closest("li");
-    // checkGuess("d");
-    // let e = document.getElementById("e").closest("li");
-    // checkGuess("e");
-    // let f = document.getElementById("f").closest("li");
-    // checkGuess("f");
-    // let g = document.getElementById("g").closest("li");
-    // checkGuess("g");
-    // let h = document.getElementById("h").closest("li");
-    // checkGuess("h");
-    // let i = document.getElementById("i").closest("li");
-    // checkGuess("i");
-    // let j = document.getElementById("j").closest("li");
-    // checkGuess("j");
-    // let k = document.getElementById("k").closest("li");
-    // checkGuess("k");
-    // let l = document.getElementById("l").closest("li");
-    // checkGuess("l");
-    // let m = document.getElementById("m").closest("li");
-    // checkGuess("m");
-    // let n = document.getElementById("n").closest("li");
-    // checkGuess("n");
-    // let o = document.getElementById("o").closest("li");
-    // checkGuess("o");
-    // let p = document.getElementById("p").closest("li");
-    // checkGuess("p");
-    // let q = document.getElementById("q").closest("li");
-    // checkGuess("q");
-    // let r = document.getElementById("r").closest("li");
-    // checkGuess("r");
-    // let s = document.getElementById("s").closest("li");
-    // checkGuess("s");
-    // let t = document.getElementById("t").closest("li");
-    // checkGuess("t");
-    // let u = document.getElementById("u").closest("li");
-    // checkGuess("u");
-    // let v = document.getElementById("v").closest("li");
-    // checkGuess("v");
-    // let w = document.getElementById("w").closest("li");
-    // checkGuess("w");
-    // let x = document.getElementById("x").closest("li");
-    // checkGuess("x");
-    // let y = document.getElementById("y").closest("li");
-    // checkGuess("y");
-    // let z = document.getElementById("z").closest("li");
-    // checkGuess("z");
+    let g = document.getElementById("g");
+    g.addEventListener("click", function() {
+        checkGuess("g");
+        g.classList.add("inactive");
+    });
 
-    document.addEventListener('keypress', (event) => {
-        let keyword = event.keyCode;
-        console.log(keyword);
-    })
+    let h = document.getElementById("h");
+    h.addEventListener("click", function() {
+        checkGuess("h");
+        h.classList.add("inactive");
+    });
+
+    let i = document.getElementById("i");
+    i.addEventListener("click", function() {
+        checkGuess("i");
+        i.classList.add("inactive");
+    });
+
+
+    let j = document.getElementById("j");
+    j.addEventListener("click", function() {
+        checkGuess("j");
+        j.classList.add("inactive");
+    });
+
+    let k = document.getElementById("k");
+    k.addEventListener("click", function() {
+        checkGuess("k");
+        k.classList.add("inactive");
+    });
+
+    let l = document.getElementById("l");
+    l.addEventListener("click", function() {
+        checkGuess("l");
+        l.classList.add("inactive");
+    });
+
+    let m = document.getElementById("m");
+    m.addEventListener("click", function() {
+        checkGuess("m");
+        m.classList.add("inactive");
+    });
+
+    let n = document.getElementById("n");
+    n.addEventListener("click", function() {
+        checkGuess("n");
+        n.classList.add("inactive");
+    });
+
+    let o = document.getElementById("o");
+    o.addEventListener("click", function() {
+        checkGuess("o");
+        o.classList.add("inactive");
+    });
+
+    let p = document.getElementById("p");
+    p.addEventListener("click", function() {
+        checkGuess("p");
+        p.classList.add("inactive");
+    });
+
+    let q = document.getElementById("q");
+    q.addEventListener("click", function() {
+        checkGuess("q");
+        q.classList.add("inactive");
+    });
+
+    let r = document.getElementById("r");
+    r.addEventListener("click", function() {
+        checkGuess("r");
+        r.classList.add("inactive");
+    });
+
+    let s = document.getElementById("s");
+    s.addEventListener("click", function() {
+        checkGuess("s");
+        s.classList.add("inactive");
+    });
+
+    let t = document.getElementById("t");
+    t.addEventListener("click", function() {
+        checkGuess("t");
+        t.classList.add("inactive");
+    });
+
+    let u = document.getElementById("u");
+    u.addEventListener("click", function() {
+        checkGuess("u");
+        u.classList.add("inactive");
+    });
+
+    let v = document.getElementById("v");
+    v.addEventListener("click", function() {
+        checkGuess("v");
+        v.classList.add("inactive");
+    });
+
+    let w = document.getElementById("w");
+    w.addEventListener("click", function() {
+        checkGuess("w");
+        w.classList.add("inactive");
+    });
+
+    let x = document.getElementById("x");
+    x.addEventListener("click", function() {
+        checkGuess("x");
+        x.classList.add("inactive");
+    });
+
+    let y = document.getElementById("y");
+    y.addEventListener("click", function() {
+        checkGuess("y");
+        y.classList.add("inactive");
+    });
+
+    let z = document.getElementById("z");
+    z.addEventListener("click", function() {
+        checkGuess("z");
+        z.classList.add("inactive");
+    });
+
 
     resetButton.click(function() {
 
@@ -224,7 +305,6 @@ $(document).ready(function() {
         chosenCategory = category[Math.floor(Math.random() * category.length)];
         categoryWord = word[Math.floor(Math.random() * word.length)];
         hiddenWord = categoryWord.replace(/./g, "-");
-        console.log(hiddenWord);
         generateUnderscore(hiddenWord.length);
         makeUnderline.append("<div class='domunderscore'>" + generateUnderscore(hiddenWord).join(' ') + "</div>")
         selectedCategory.text(chosenCategory);
@@ -271,25 +351,25 @@ $(document).ready(function() {
         livesLeft.text(lives);
 
     }
-}
 
-function checkWinner() {
-    let emptyUnderscore = true;
-    for (let i = 0; i < underscore.length; i++) {
-        if (underscore[i] == "_") {
-            emptyUnderscore = false;
+
+    function checkWinner() {
+        let emptyUnderscore = true;
+        for (let i = 0; i < underscore.length; i++) {
+            if (underscore[i] == "_") {
+                emptyUnderscore = false;
+            }
+        }
+        if (lives === 0 && emptyUnderscore == true) {
+            lose++
+            console.log(lose);
+            updateNumOfLoses.text(lose);
+            status.text("sorry you have lost");
+            return false;
+
+        } else {
+            return true;
         }
     }
-    if (lives === 0 && emptyUnderscore == true) {
-        lose++
-        console.log(lose);
-        updateNumOfLoses.text(lose);
-        status.text("sorry you have lost");
-        return false;
-
-    } else {
-        return true;
-    }
-}
-startGame()
+    startGame()
 });
