@@ -20,6 +20,7 @@ $(document).ready(function() {
     ]
     var step = 0; //9 steps 
     var lives = 9;
+    let underscore = [];
 
     /*------------ cached elements ---------------*/
 
@@ -32,9 +33,9 @@ $(document).ready(function() {
     const resetButton = $("#reset");
     const hintButton = $("#hint");
     const soundButton = $("#sound");
-    const updateNumOfWins = document.getElementById("numOfWins")
-    const updateNumOfLoses = document.getElementById("numOfLoses")
-    const livesLeft = document.getElementById("livesleft")
+    const updateNumOfWins = $("numOfWins")
+    const updateNumOfLoses = $("numOfLoses")
+    const livesLeft = $("livesleft")
 
     /*----------- events ------------------*/
     alphabet.click(function() {
@@ -50,8 +51,7 @@ $(document).ready(function() {
     })
 
     resetButton.click(function() {
-        Draw(draws[step++])
-        if (undefined === draws[step]);
+
     })
 
     hintButton.click(function() {
@@ -60,7 +60,8 @@ $(document).ready(function() {
     })
 
     soundButton.click(function() {
-        console.log("sound")
+        Draw(draws[step++])
+        if (undefined === draws[step]);
     })
 
     /*----- HANGMAN DRAWING -------*/
@@ -138,12 +139,18 @@ $(document).ready(function() {
         }
     }
 
-    /*----- function ------*/
-
-
-
     clearCanvas = () => {
         context.clearRect(0, 0, canvas.width, canvas.height)
+    }
+
+    /*----- function ------*/
+
+    function generateUnderscore(selected) {
+        for (let i = 0; i < selected; i++) {
+            underscore.push('_');
+        }
+        return underscore;
+
     }
 
     function startGame() {
@@ -151,23 +158,52 @@ $(document).ready(function() {
         categoryWord = word[Math.floor(Math.random() * word.length)];
         hiddenWord = categoryWord.replace(/./g, "-");
         console.log(hiddenWord);
-        makeUnderline.append('<div id="und">' + hiddenWord + '</div>')
+        console.log(generateUnderscore(hiddenWord.length));
+        makeUnderline.append("<div>" + generateUnderscore(hiddenWord).join(' ') + "</div>")
+
+
+        let domUnderscore = document.getElementById("und");
+        //domUnderscore[0].innerHtml = underscore.join('');
         selectedCategory.text(chosenCategory)
+
         clearCanvas()
+        step = 0;
+        win = 0;
+        loss = 0;
     };
+
 
     function checkGuess(guess) {
         if (categoryWord.indexOf(guess) > -1) {
             console.log("yes");
             let domUnd = document.getElementById("und");
-            domUnd.innerHtml = "a";
+            domUnd.innerHTML = underscore.join('');
+            if (categoryWord.lastIndexOf(guess) > categoryWord.indexOf(guess)) {
+                let x = categoryWord.lastIndexOf(guess);
+
+            }
+
+            console.log(categoryWord.indexOf(guess));
         } else {
             console.log("no");
-            let domUnd = document.getElementById("und");
-            domUnd[0].innerHtml = "x";
+            Draw(draws[step++])
+            if (undefined === draws[step]);
+            lives--
+            checkWinner();
+            console.log(lives)
+            livesLeft.text(lives)
+
         }
     }
 
-
+    function checkWinner() {
+        if (lives === 0) {
+            //disable all alphabet buttons
+            loss++
+            console.log(loss)
+            status.text("sorry you have lost")
+            updateNumOfLoses.text(loss);
+        }
+    }
     startGame()
 });

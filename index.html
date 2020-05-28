@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/style.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
@@ -23,12 +23,8 @@
     <!-- Hangman Canvas -->
     <canvas id="hangman" width="180" height="250"></canvas>
 
-    <!-- Lives-->
-
-
     <!-- Underlined Letter Choices-->
     <section id="wordwrap">
-
     </section>
 
     <!-- Messages - Default(as seen below), Win or Lose -->
@@ -74,7 +70,7 @@
         <div class="lost">Lost: <span id="numOfLoses">0</span></div>
         <p id="livesleft">You have 9 lives left</p>
     </div>
-    <script defer src="./js/main.js"></script>
+
 </body>
 
 </html>

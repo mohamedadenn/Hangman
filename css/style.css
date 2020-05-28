@@ -160,6 +160,10 @@ section div {
     font-size: 5em;
 }
 
+#und {
+    content: "";
+}
+
 
 /* button {
     display: inline-flex;
