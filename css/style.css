@@ -7,11 +7,11 @@ body {
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas: "header header header helpicon" "category category category category" "canvas canvas canvas canvas" "word word word word" "msg msg msg msg" "ab ab ab ab" "tryagain hint sound winloss";
-    border: 2px solid #ffa94d;
+    border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #ffd8a8;
+    background-color: #442F74;
     padding: 1em;
-    color: #d9480f;
+    color: black;
 }
 
 h1 {
@@ -21,9 +21,9 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #f76707;
+    border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #fff4e6;
+    background-color: #8A7BAF;
     position: relative;
     margin: 0;
     padding: 10px;
@@ -33,7 +33,7 @@ i {
     grid-area: helpicon;
     grid-row: 1/2;
     grid-column: 4/5;
-    background-color: #fff4e6;
+    background-color: #8A7BAF;
     align-content: right;
     position: absolute;
     right: 0;
@@ -47,9 +47,10 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #f76707;
+    border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #fff4e6;
+    background-color: #8A7BAF;
+    padding: 20px;
 }
 
 #hangmanwrapper {
@@ -62,9 +63,11 @@ h3 {
 }
 
 #hangman {
-    border: 2px solid #f76707;
+    border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #fff4e6;
+    background-color: #8A7BAF;
+    padding: 50px;
+    margin-bottom: 20px;
 }
 
 #wordwrap {
@@ -74,9 +77,9 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #f76707;
+    border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #fff4e6;
+    background-color: #8A7BAF;
 }
 
 #status {
@@ -86,9 +89,9 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #f76707;
+    border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #fff4e6;
+    background-color: #8A7BAF;
 }
 
 ul {
@@ -99,45 +102,46 @@ ul {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    border: 2px solid #f76707;
+    border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #fff4e6;
+    background-color: #8A7BAF;
+    padding: 20px;
 }
 
 #reset {
     grid-area: tryagain;
     grid-row: 7/8;
     grid-column: 1/2;
-    border: 2px solid #f76707;
+    border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #fff4e6;
+    background-color: #8A7BAF;
 }
 
 #hint {
     grid-area: hint;
     grid-row: 7/8;
     grid-column: 2/3;
-    border: 2px solid #f76707;
+    border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #fff4e6;
+    background-color: #8A7BAF;
 }
 
 #sound {
     grid-area: sound;
     grid-row: 7/8;
     grid-column: 3/4;
-    border: 2px solid #f76707;
+    border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #fff4e6;
+    background-color: #8A7BAF;
 }
 
 #scoreboard {
     grid-area: winloss;
     grid-row: 7/8;
     grid-column: 3/5;
-    border: 2px solid #f76707;
+    border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #fff4e6;
+    background-color: #8A7BAF;
 }
 
 li {
@@ -146,13 +150,13 @@ li {
     list-style-type: none;
     margin: 0 20px 10px 10px;
     padding: 10px;
-    background-color: aqua;
-    border: 3px solid black;
+    background-color: #8E6BDE;
+    border: 3px solid #7045D4;
     cursor: pointer;
 }
 
 li:hover {
-    background-color: chartreuse;
+    background-color: #400DB4;
 }
 
 .inactive {
@@ -163,12 +167,10 @@ li:hover {
 section div {
     padding: 20px;
     margin: 0.5em;
-    /* display: inline-flex; */
     font-size: 5em;
 }
 
-
-/* button {
-    display: inline-flex;
-    justify-content: space-evenly;
-} */
+#status {
+    font-size: 1.5em;
+    padding: 20px;
+}

@@ -13,13 +13,13 @@
 </head>
 
 <body>
-
-    <h1 id="title">Hangman<i style="font-size:40px" class="fa" id="helpIcon">&#xf059;</i></h1>
     <!-- Help Icon, which gives instructions on how to play-->
+    <h1 id="title">Hangman<i style="font-size:40px" class="fa" id="helpIcon">&#xf059;</i></h1>
+
 
 
     <!-- Category  -->
-    <h3>Category: <span id="selectedcategory"> Fruits</span></h3>
+    <h3>Category: <span id="selectedcategory"></span></h3>
 
     <!-- Hangman Canvas -->
     <div id="hangmanwrapper">
@@ -67,10 +67,13 @@
     <section id="controls">
         <button id="reset">Try again</button>
         <button id="hint">Hint</button>
+
+        <!-- Sound not added in yet-->
         <audio id="sounds">
            <source src=""
        </audio>
         <a id="sound">Sound </a></section>
+
     <!-- Scoreboard -->
     <div id="scoreboard">
         <div>Won: <span id="numOfWins">0</span></div>
