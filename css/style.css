@@ -1,15 +1,11 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
-    grid-template-areas: "header header header helpicon" "category category category category" "canvas canvas canvas canvas" "word word word word" "msg msg msg msg" "ab ab ab ab" "tryagain hint sound winloss";
-    border: 2px solid #16063A;
+    grid-template-areas: "category header header helpicon" "tryagain hint . winloss" "canvas canvas canvas canvas" "word word word word" "msg msg msg msg" "ab ab ab ab";
+    /* border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #442F74;
+    background-color: #442F74; */
     padding: 1em;
     color: black;
 }
@@ -21,18 +17,20 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #16063A;
-    border-radius: 5px;
-    background-color: #8A7BAF;
+    /* border: 2px solid #16063A;
+    border-radius: 5px; */
+    background-color: #8E6BDE;
     position: relative;
-    margin: 0;
+    margin: 0 0 30px 0;
     padding: 10px;
+    font-size: 40px;
+    font-family: 'Sigmar One', "bold";
 }
 
 i {
     grid-area: helpicon;
     grid-row: 1/2;
-    grid-column: 4/5;
+    grid-column: 3/4;
     background-color: #8A7BAF;
     align-content: right;
     position: absolute;
@@ -42,15 +40,17 @@ i {
 h3 {
     grid-area: category;
     grid-row: 2/3;
-    grid-column: 1/5;
+    grid-column: 2/4;
     display: inline-flex;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #16063A;
+    /* border: 2px solid #16063A; */
     border-radius: 5px;
-    background-color: #8A7BAF;
-    padding: 20px;
+    /* background-color: #8A7BAF; */
+    /* padding: 20px; */
+    font-size: 40px;
+    margin: auto;
 }
 
 #hangmanwrapper {
@@ -62,13 +62,7 @@ h3 {
     justify-content: center;
 }
 
-#hangman {
-    border: 2px solid #16063A;
-    border-radius: 5px;
-    background-color: #8A7BAF;
-    padding: 50px;
-    margin-bottom: 20px;
-}
+#hangman {}
 
 #wordwrap {
     grid-area: word;
@@ -77,9 +71,9 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #16063A;
+    /* border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #8A7BAF;
+    background-color: #8A7BAF; */
 }
 
 #status {
@@ -89,9 +83,9 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #16063A;
+    /* border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #8A7BAF;
+    background-color: #8A7BAF; */
 }
 
 ul {
@@ -102,28 +96,39 @@ ul {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    border: 2px solid #16063A;
+    /* border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #8A7BAF;
+    background-color: #8A7BAF; */
     padding: 20px;
+    font-size: 40px;
 }
 
 #reset {
     grid-area: tryagain;
-    grid-row: 7/8;
+    grid-row: 2/3;
     grid-column: 1/2;
-    border: 2px solid #16063A;
+    /* border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #8A7BAF;
+    background-color: #8A7BAF; */
+    margin: 0 20px 10px 10px;
+    padding: 20px;
+    background-color: #8E6BDE;
+    border: 3px solid #7045D4;
+    border-radius: 10%;
 }
 
 #hint {
     grid-area: hint;
-    grid-row: 7/8;
+    grid-row: 2/3;
     grid-column: 2/3;
-    border: 2px solid #16063A;
+    /* border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #8A7BAF;
+    background-color: #8A7BAF; */
+    margin: 0 20px 10px 10px;
+    padding: 20px;
+    background-color: #8E6BDE;
+    border: 3px solid #7045D4;
+    border-radius: 10%;
 }
 
 #sound {
@@ -137,11 +142,11 @@ ul {
 
 #scoreboard {
     grid-area: winloss;
-    grid-row: 7/8;
-    grid-column: 3/5;
-    border: 2px solid #16063A;
+    grid-row: 2/3;
+    grid-column: 4/5;
+    /* border: 2px solid #16063A;
     border-radius: 5px;
-    background-color: #8A7BAF;
+    background-color: #8A7BAF; */
 }
 
 li {
@@ -155,7 +160,15 @@ li {
     cursor: pointer;
 }
 
-li:hover {
+#hint:hover {
+    background-color: #400DB4;
+}
+
+#reset:hover {
+    background-color: #400DB4;
+}
+
+button:hover {
     background-color: #400DB4;
 }
 

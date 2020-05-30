@@ -43,7 +43,6 @@ $(document).ready(function() {
                 return;
             }
             checkGuess(evt.target.innerHTML)
-            console.log("test")
             evt.target.classList.add('inactive')
         });
     }
@@ -55,6 +54,7 @@ $(document).ready(function() {
     hintButton.click(function() {
         alert("oops doesnt work yet");
     })
+
 
     /*----- HANGMAN DRAWING -------*/
     Draw = (part) => {
@@ -154,7 +154,8 @@ $(document).ready(function() {
         selectedCategory.text(chosenCategory);
         domUnderscore.innerHTML = underscore.join(' ');
         addActive();
-        clearCanvas()
+        clearCanvas();
+
         step = 0;
         win = 0;
         loss = 0;
@@ -189,6 +190,7 @@ $(document).ready(function() {
             return true;
 
         } else {
+
             Draw(draws[step++])
             if (undefined === draws[step]);
             if (lives > 1) {
@@ -290,7 +292,6 @@ $(document).ready(function() {
 
         let v = document.getElementById("v");
         v.classList.replace("inactive", "active");
-
 
         let w = document.getElementById("w");
         w.classList.replace("inactive", "active");
