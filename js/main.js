@@ -5,7 +5,7 @@ $(document).ready(function() {
     let category = [" Fruits"];
     let word = ["apple", "banana", "kiwi", "orange", "pear", "cherry", "grape", "strawberry", "peach"];
     let hint1 = ["its red", "its yellow", "its green"]; //not used!
-    var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+    var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", //not used yet
         "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
     ]; //not used but will implement to clean up code + identify which letters have been used
 

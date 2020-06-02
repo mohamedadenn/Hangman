@@ -51,6 +51,7 @@ h3 {
     /* padding: 20px; */
     font-size: 40px;
     margin: auto;
+    text-align: right;
 }
 
 #hangmanwrapper {
